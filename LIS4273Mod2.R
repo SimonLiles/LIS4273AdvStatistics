@@ -3,6 +3,12 @@
 # LIS 4273 Advanced Statistics 
 # Module 2 Descriptive Statistics with R
 
+# Create the function for finding mode.
+getmode <- function(v) {
+  uniqv <- unique(v)
+  uniqv[which.max(tabulate(match(v, uniqv)))]
+}
+
 # Given data sets
 
 set_1 <- c(10, 2, 3, 2, 4, 2, 5)
@@ -13,12 +19,12 @@ set_2 <- c(20, 12, 13, 12, 14, 12, 15)
   # Data set 1 central tendency calculations
   set_1_mean <- mean(set_1)
   set_1_median <- median(set_1)
-  set_1_mode <- mode(set_1)
+  set_1_mode <- getmode(set_1)
   
   # Data set 2 central tendency
   set_2_mean <- mean(set_2)
   set_2_median <- median(set_2)
-  set_2_mode <- mode(set_2)
+  set_2_mode <- getmode(set_2)
 
 # 2. Compute range, interquartile, variance, standard deviation under Variation
     # Data set 1 Variation Calculations
